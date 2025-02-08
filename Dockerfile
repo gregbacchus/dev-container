@@ -10,3 +10,6 @@ FROM mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
 
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=build /workspace/node_modules/supabase/bin/supabase /usr/local/bin/supabase
+
+ENTRYPOINT ["sh", "-c"]
+CMD ["while true; do sleep 30; done;"]
